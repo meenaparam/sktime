@@ -365,8 +365,11 @@ class ComposableTimeSeriesForestRegressor(BaseTimeSeriesForest, BaseRegressor):
 
         self.oob_score_ /= self.n_outputs_
 
-    def _set_oob_score_and_attributes(self, X, y):
-        print("Just something to print")
+    def _set_oob_score_and_attributes(self):
+        pass
+
+    def _test_function(self):
+        print("test function is here")
 
     def _validate_y_class_weight(self, y):
         # in regression, we don't validate class weights
