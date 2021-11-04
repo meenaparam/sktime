@@ -174,7 +174,7 @@ class ComposableTimeSeriesForestRegressor(BaseTimeSeriesForest, BaseRegressor):
         self,
         estimator=None,
         n_estimators=100,
-        criterion="mse",
+        criterion="squared_error",
         max_depth=None,
         min_samples_split=2,
         min_samples_leaf=1,
@@ -203,7 +203,7 @@ class ComposableTimeSeriesForestRegressor(BaseTimeSeriesForest, BaseRegressor):
         self.max_features = max_features
         self.max_leaf_nodes = max_leaf_nodes
         self.min_impurity_decrease = min_impurity_decrease
-        self.min_impurity_split = min_impurity_split
+        #self.min_impurity_split = min_impurity_split
         self.max_samples = max_samples
 
         # Pass on params.
@@ -275,7 +275,7 @@ class ComposableTimeSeriesForestRegressor(BaseTimeSeriesForest, BaseRegressor):
             "max_features": self.max_features,
             "max_leaf_nodes": self.max_leaf_nodes,
             "min_impurity_decrease": self.min_impurity_decrease,
-            "min_impurity_split": self.min_impurity_split,
+            #"min_impurity_split": self.min_impurity_split,
         }
         final_estimator = self.estimator_.steps[-1][0]
         self.estimator_params = {
